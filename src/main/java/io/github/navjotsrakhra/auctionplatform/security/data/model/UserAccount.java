@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -24,6 +25,23 @@ public class UserAccount implements UserDetails {
     private boolean accountNonLocked;
     private boolean credentialsNonExpired;
     private boolean enabled;
+
+    public UserAccount(String username, String password, String email, List<Authority> authorities) { // Validation
+        this.username = username;
+        this.authorities = new ArrayList<>();
+
+        setPassword(password);
+        setEmail(email);
+        setAuthorities(authorities == null ? List.of(Authority.USER) : authorities);
+        setAccountNonExpired(true);
+        setAccountNonLocked(true);
+        setCredentialsNonExpired(true);
+        setEnabled(true);
+    }
+
+    public UserAccount() {
+
+    }
 
     public Long getId() {
         return id;

@@ -1,4 +1,4 @@
-package io.github.navjotsrakhra.auctionplatform.security.dao;
+package io.github.navjotsrakhra.auctionplatform.security.data.dao;
 
 import io.github.navjotsrakhra.auctionplatform.data.dao.Dao;
 import io.github.navjotsrakhra.auctionplatform.security.data.model.UserAccount;
