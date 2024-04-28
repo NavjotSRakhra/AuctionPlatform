@@ -1,6 +1,9 @@
 package io.github.navjotsrakhra.auctionplatform.security.data.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -16,7 +19,6 @@ public class UserAccount implements UserDetails {
     private String username; // TODO Unique
     private String password;
     private String email; // TODO Unique
-    @ElementCollection(fetch = FetchType.EAGER)
     private List<Authority> authorities;
     private boolean accountNonExpired;
     private boolean accountNonLocked;

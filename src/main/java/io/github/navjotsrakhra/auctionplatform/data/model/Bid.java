@@ -16,7 +16,7 @@ public class Bid {
     private Instant bidTime;
     private BigDecimal bidAmount;
     @ManyToOne
-    private UserAccount bidOwner;
+    private UserAccount bidOwnerAccount;
 
     public Long getId() {
         return id;

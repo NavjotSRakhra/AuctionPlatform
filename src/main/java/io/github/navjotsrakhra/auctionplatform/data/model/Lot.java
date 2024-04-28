@@ -15,7 +15,7 @@ public class Lot {
     private Instant startTime;
     private Instant endTime;
     @ManyToOne
-    private UserAccount owner;
+    private UserAccount lotOwnerAccount;
 
     public Long getId() {
         return id;
