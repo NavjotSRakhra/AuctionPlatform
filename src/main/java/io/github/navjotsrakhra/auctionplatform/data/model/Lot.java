@@ -20,11 +20,12 @@ public class Lot {
     public Lot() {
     }
 
-    public Lot(String title, String description, Instant startTime, Instant endTime) {
+    public Lot(String title, String description, Instant startTime, Instant endTime, UserAccount userAccount) {
         this.title = title;
         this.description = description;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.lotOwnerAccount = userAccount;
     }
 
 
