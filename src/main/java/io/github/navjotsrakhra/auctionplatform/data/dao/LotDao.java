@@ -2,11 +2,13 @@ package io.github.navjotsrakhra.auctionplatform.data.dao;
 
 import io.github.navjotsrakhra.auctionplatform.data.model.Lot;
 import io.github.navjotsrakhra.auctionplatform.data.repository.LotRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+@Repository
 public class LotDao implements Dao<Lot> {
 
     private final LotRepository lotRepository;
