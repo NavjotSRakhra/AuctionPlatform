@@ -6,6 +6,7 @@ import io.github.navjotsrakhra.auctionplatform.security.repository.UserAccountRe
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Repository
@@ -18,22 +19,26 @@ public class UserAccountDao implements Dao<UserAccount> {
 
     @Override
     public UserAccount save(UserAccount userAccount) {
+        Objects.requireNonNull(userAccount);
         return this.userAccountRepository.save(userAccount);
     }
 
     @Override
     public UserAccount update(UserAccount userAccount) {
+        Objects.requireNonNull(userAccount);
         return this.userAccountRepository.save(userAccount);
     }
 
     @Override
     public UserAccount delete(UserAccount userAccount) {
+        Objects.requireNonNull(userAccount);
         this.userAccountRepository.delete(userAccount);
         return userAccount;
     }
 
     @Override
     public Optional<UserAccount> findById(Long id) {
+        Objects.requireNonNull(id);
         return this.userAccountRepository.findById(id);
     }
 
@@ -43,6 +48,7 @@ public class UserAccountDao implements Dao<UserAccount> {
     }
 
     public Optional<UserAccount> findByUsername(String username) {
+        Objects.requireNonNull(username);
         return userAccountRepository.findByUsername(username);
     }
 }
